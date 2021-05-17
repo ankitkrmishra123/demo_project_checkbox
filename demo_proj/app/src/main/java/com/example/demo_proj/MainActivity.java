@@ -103,16 +103,18 @@ public class MainActivity extends AppCompatActivity {
 
 //                System.out.println(boxItemAdapter.instance.map);
 
-//                final int childCount = data.getChildCount();
-//                for (int i = 0; i < childCount; i++) {
-//                    LinearLayout ll = (LinearLayout) data.getChildAt(i);
-//                    final int childCount1 = ll.getChildCount();
-//                    for(int j=0; j<childCount1; j++) {
-//                        TextView tv = (TextView) ll.getChildAt(i);
-//                        System.out.print("Row"+(i+1)+ ":" + tv.getText().toString()+ " ");
-//                    }
-//                    System.out.println();
-//                }
+
+                final int childCount = data.getChildCount();
+                for (int i = 0; i < childCount; i++) {
+                    HorizontalScrollView hsv = (HorizontalScrollView) data.getChildAt(i);
+                    LinearLayout ll = (LinearLayout) hsv.getChildAt(0);
+                    final int childCount1 = ll.getChildCount();
+                    for(int j=0; j<childCount1; j++) {
+                        TextView tv = (TextView) ll.getChildAt(j);
+                        System.out.print(tv.getText().toString()+ " ");
+                    }
+                    System.out.println();
+                }
             }
         });
     }
